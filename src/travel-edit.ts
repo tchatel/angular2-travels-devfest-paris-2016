@@ -16,7 +16,7 @@
         </div>
         <div class="pure-controls">
             <a class="pure-button pure-button-primary">Return to list</a>
-            </div>
+        </div>
     </fieldset>
 </form>
 */

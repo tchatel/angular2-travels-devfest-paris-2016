@@ -3,12 +3,10 @@ import {RouteConfig} from "angular2/router";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 
 import {TravelList} from "./travel-list";
-import {TravelEdit} from "./travel-edit";
 
 
 @RouteConfig([
     { path: '/',            component: TravelList, as: 'List' },
-    { path: '/edit/:id',    component: TravelEdit, as: 'Edit' },
 ])
 @Component({
     selector: 'travel-app',

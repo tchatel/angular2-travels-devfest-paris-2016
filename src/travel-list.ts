@@ -1,6 +1,5 @@
 import {Component} from "angular2/core";
 import {CORE_DIRECTIVES} from "angular2/common";
-import {ROUTER_DIRECTIVES} from "angular2/router";
 
 import { Travel } from './travel'
 import { TravelManager } from './travel-manager'
@@ -36,9 +35,6 @@ import { TravelShow } from './travel-show'
                         <a href (click)="select(travel)" class="pure-button">
                             <i class="fa fa-caret-square-o-down"></i> Show
                         </a>
-                        <a href [routerLink]="['/Edit', {id: travel.id}]" class="pure-button">
-                            <i class="fa fa-pencil-square-o"></i> Edit
-                        </a>
                         <a href (click)="remove(travel)" class="pure-button">
                             <i class="fa fa-trash-o"></i> Remove
                         </a>
@@ -48,7 +44,7 @@ import { TravelShow } from './travel-show'
         </table>
         <travel-show [travel]="selectedTravel"></travel-show>
     `,
-    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, TravelShow]
+    directives: [CORE_DIRECTIVES, TravelShow]
 })
 export class TravelList {
     travels: Travel[];

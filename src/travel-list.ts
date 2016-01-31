@@ -1,59 +1,42 @@
-import {Component} from "angular2/core";
-import {CORE_DIRECTIVES} from "angular2/common";
-
-import { Travel } from './travel'
-
-
-@Component({
-    selector: 'travel-list',
-    template: `
-        <style>
-            table#travel-list img {
-                width: 60px;
-                height: 45px;
-            }
-            table#travel-list .old {
-                color: brown;
-            }
-        </style>
-        <h2>Travels List:</h2>
-        <table class="pure-table pure-table-horizontal" id="travel-list">
-            <thead>
-                <tr>
-                    <td>Picture</td><td>Place</td><td>Country</td><td>Year</td><td></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="#travel of travels">
-                    <td><img src="img/{{travel.img || 'none.jpg'}}"/></td>
-                    <td [ngClass]="{old: travel.isOld()}">{{travel.place}}</td>
-                    <td>{{travel.country}}</td>
-                    <td>{{travel.year}}</td>
-                    <td>
-                        <a href (click)="remove(travel)" class="pure-button">
-                            <i class="fa fa-trash-o"></i> Remove
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    `,
-    directives: [CORE_DIRECTIVES]
-})
-export class TravelList {
-    travels: Travel[];
-    constructor() {
-        this.travels = [
-            new Travel("SF2015", "San Francisco", "USA", 2015, "sanfrancisco.jpg"),
-            new Travel("NA2014", "Nantes", "France", 2014, "nantes.jpg"),
-            new Travel("BX2014", "Bruxelles", "Belgique", 2014, "bruxelles.jpg"),
-            new Travel("YO2014", "Yosemite", "USA", 2014, "yosemite.jpg"),
-            new Travel("BT2013", "Bretagne", "France", 2013, "bretagne.jpg")
-        ];
+/*
+<style>
+    table#travel-list img {
+        width: 60px;
+        height: 45px;
     }
-    remove(travel: Travel) {
-        let index = this.travels.indexOf(travel);
-        this.travels.splice(index, 1);
-        return false;
+    table#travel-list .old {
+        color: brown;
     }
-}
+</style>
+<h2>Travels List:</h2>
+<table class="pure-table pure-table-horizontal" id="travel-list">
+    <thead>
+        <tr>
+            <td>Picture</td><td>Place</td><td>Country</td><td>Year</td><td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>***</td>
+            <td>***</td>
+            <td>***</td>
+            <td>***</td>
+            <td>
+                <a href class="pure-button">
+                    <i class="fa fa-trash-o"></i> Remove
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+*/
+
+/*
+    [
+        new Travel("SF2015", "San Francisco", "USA", 2015, "sanfrancisco.jpg"),
+        new Travel("NA2014", "Nantes", "France", 2014, "nantes.jpg"),
+        new Travel("BX2014", "Bruxelles", "Belgique", 2014, "bruxelles.jpg"),
+        new Travel("YO2014", "Yosemite", "USA", 2014, "yosemite.jpg"),
+        new Travel("BT2013", "Bretagne", "France", 2013, "bretagne.jpg")
+    ]
+*/

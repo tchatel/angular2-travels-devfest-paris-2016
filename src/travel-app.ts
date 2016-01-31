@@ -1,20 +1,15 @@
 import {Component} from "angular2/core";
-import {RouteConfig} from "angular2/router";
-import {ROUTER_DIRECTIVES} from "angular2/router";
 
 import {TravelList} from "./travel-list";
 
 
-@RouteConfig([
-    { path: '/',            component: TravelList, as: 'List' },
-])
 @Component({
     selector: 'travel-app',
     template: `
         <h1>Angular 2 : Sample Travels Application</h1>
-        <router-outlet></router-outlet>
+        <travel-list></travel-list>
     `,
-    directives: [ROUTER_DIRECTIVES]
+    directives: [TravelList]
 })
 export class TravelApp {
     constructor() {

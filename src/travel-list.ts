@@ -2,7 +2,6 @@ import {Component} from "angular2/core";
 import {CORE_DIRECTIVES} from "angular2/common";
 
 import { Travel } from './travel'
-import { TravelShow } from './travel-show'
 
 
 @Component({
@@ -31,9 +30,6 @@ import { TravelShow } from './travel-show'
                     <td>{{travel.country}}</td>
                     <td>{{travel.year}}</td>
                     <td>
-                        <a href (click)="select(travel)" class="pure-button">
-                            <i class="fa fa-caret-square-o-down"></i> Show
-                        </a>
                         <a href (click)="remove(travel)" class="pure-button">
                             <i class="fa fa-trash-o"></i> Remove
                         </a>
@@ -41,13 +37,11 @@ import { TravelShow } from './travel-show'
                 </tr>
             </tbody>
         </table>
-        <travel-show [travel]="selectedTravel"></travel-show>
     `,
-    directives: [CORE_DIRECTIVES, TravelShow]
+    directives: [CORE_DIRECTIVES]
 })
 export class TravelList {
     travels: Travel[];
-    selectedTravel: Travel;
     constructor() {
         this.travels = [
             new Travel("SF2015", "San Francisco", "USA", 2015, "sanfrancisco.jpg"),
@@ -56,10 +50,6 @@ export class TravelList {
             new Travel("YO2014", "Yosemite", "USA", 2014, "yosemite.jpg"),
             new Travel("BT2013", "Bretagne", "France", 2013, "bretagne.jpg")
         ];
-    }
-    select(travel: Travel) {
-        this.selectedTravel = travel;
-        return false;
     }
     remove(travel: Travel) {
         let index = this.travels.indexOf(travel);

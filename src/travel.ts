@@ -8,7 +8,7 @@ export class Travel {
         public img: string
     ) {}
     isOld() {
-        return new Date().getFullYear() - this.year > 0;
+        return this.year < 2015;
     }
 }
 

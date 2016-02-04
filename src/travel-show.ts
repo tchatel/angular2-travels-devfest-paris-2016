@@ -1,5 +1,4 @@
 import {Component} from "angular2/core";
-import {CORE_DIRECTIVES} from "angular2/common";
 
 import { Travel } from './travel'
 
@@ -42,7 +41,7 @@ import { Travel } from './travel'
             </table>
         </div>
     `,
-    directives: [CORE_DIRECTIVES],
+    directives: [],
     inputs: ['travel']
 })
 export class TravelShow {

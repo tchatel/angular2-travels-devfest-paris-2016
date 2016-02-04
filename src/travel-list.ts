@@ -1,5 +1,4 @@
 import {Component} from "angular2/core";
-import {CORE_DIRECTIVES} from "angular2/common";
 
 import { Travel } from './travel'
 
@@ -38,7 +37,7 @@ import { Travel } from './travel'
             </tbody>
         </table>
     `,
-    directives: [CORE_DIRECTIVES]
+    directives: []
 })
 export class TravelList {
     travels: Travel[];

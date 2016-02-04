@@ -1,6 +1,5 @@
 import {Component} from "angular2/core";
 import {RouteParams} from "angular2/router";
-import {FORM_DIRECTIVES} from "angular2/common";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 
 import {Travel} from "./travel";
@@ -31,7 +30,7 @@ import {TravelManager} from "./travel-manager";
             </fieldset>
         </form>
     `,
-    directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES]
 })
 export class TravelEdit {
     travel: Travel;
